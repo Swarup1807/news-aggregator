@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News Aggregator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Trending News</h1>
+  <div id="category-filter">
+    <label for="category">Filter by Category:</label>
+    <select id="category" name="category">
+      <option value="">All</option>
+      <option value="technology">Technology</option>
+      <option value="sports">Sports</option>
+      <option value="entertainment">Entertainment</option>
+      <option value="business">Business</option>
+      <option value="health">Health</option>
+      <option value="science">Science</option>
+    </select>
+  </div>
+  <div id="articles"></div>
+  <div id="loading" class="loading" style="display:none;">Loading articles...</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

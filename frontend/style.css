@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+#category-filter {
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+#category-filter label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+#category-filter select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+#category-filter select:hover {
+  border-color: #007bff;
+}
+
+#articles {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.article {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.article:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.article h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.4em;
+  color: #007bff;
+}
+
+.article h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article h2 a:hover {
+  text-decoration: underline;
+}
+
+.article p {
+  color: #555;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+.article .source {
+  font-weight: 600;
+  color: #666;
+}
+
+.article .published {
+  font-size: 0.9em;
+  color: #999;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: 40px;
+}
