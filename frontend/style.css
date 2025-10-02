@@ -1,101 +1,150 @@
+/* Redesigned UI inspired by The Hindu */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap');
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 20px;
-  background-color: #f0f2f5;
-  color: #333;
-}
-
-h1 {
-  text-align: center;
+  font-family: 'Open Sans', Arial, sans-serif;
+  margin: 0;
+  background-color: #fff;
   color: #222;
-  margin-bottom: 20px;
-  font-weight: 700;
-  font-size: 2.5rem;
-}
-
-#category-filter {
-  max-width: 800px;
-  margin: 0 auto 20px auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-}
-
-#category-filter label {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #444;
-}
-
-#category-filter select {
-  padding: 8px 12px;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: white;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-}
-
-#category-filter select:hover {
-  border-color: #007bff;
-}
-
-#articles {
-  max-width: 800px;
-  margin: 0 auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 15px;
 }
 
-.article {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: box-shadow 0.3s ease;
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
 }
 
-.article:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+#search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-.article h2 {
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav button:hover,
+nav button.active {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.article-image {
+  width: 180px;
+  height: 120px;
+  background-color: #ccc;
+  border-radius: 6px;
+  object-fit: contain;
+  overflow: hidden;
+  display: block;
+}
+
+.article-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-title {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
   margin: 0 0 10px 0;
-  font-size: 1.4em;
-  color: #007bff;
+  color: #222;
 }
 
-.article h2 a {
+.article-title a {
   color: inherit;
   text-decoration: none;
 }
 
-.article h2 a:hover {
+.article-title a:hover {
   text-decoration: underline;
 }
 
-.article p {
-  color: #555;
-  line-height: 1.4;
-  margin: 5px 0;
-}
-
-.article .source {
-  font-weight: 600;
+.article-meta {
+  font-size: 0.9rem;
   color: #666;
+  margin-bottom: 10px;
 }
 
-.article .published {
-  font-size: 0.9em;
-  color: #999;
+.article-description {
+  font-size: 1rem;
+  color: #444;
+  flex-grow: 1;
 }
 
-.loading {
+.loading,
+.error {
   text-align: center;
   font-size: 1.2rem;
-  color: #666;
-  margin-top: 40px;
+  margin-top: 50px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .article-card {
+    flex-direction: column;
+  }
+  .article-image {
+    width: 100%;
+    height: 200px;
+  }
 }
